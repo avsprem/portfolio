@@ -372,18 +372,123 @@ section {
 .inline-block { display: inline-block; }
 
 /* Responsive UI */
+/* ==========================================
+   Mobile Responsive Navigation & Layout
+   ========================================== */
+/* Hide Mobile Toggle Button on Desktop */
+.menu-toggle {
+  display: none;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ==========================================
+   Mobile Responsive Styles (Hamburger Menu)
+   ========================================== */
 @media (max-width: 900px) {
-  body { flex-direction: column; }
+  body {
+    flex-direction: column;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
-    position: relative;
+    max-height: none;
+    position: sticky;
+    top: 0;
     border-right: none;
     border-bottom: 1px solid var(--border);
+    padding: 0.8rem 1.25rem;
+    background-color: rgba(241, 245, 249, 0.98);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
   }
-  .main-content { margin-left: 0; padding: 1.5rem; }
-  .hero { flex-direction: column; text-align: center; }
-  .contact-buttons { justify-content: center; }
+
+  .profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .profile-mini img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+
+  .profile-mini h2 {
+    font-size: 1.05rem;
+  }
+
+  /* Hamburger Button Style */
+  .menu-toggle {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-size: 1.25rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .menu-toggle:active {
+    transform: scale(0.95);
+  }
+
+  /* Nav Links - Initially Hidden in Mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Mobile Active Menu Class (JS එකෙන් Active වේ) */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+
+  .social-links {
+    display: none; /* Hide in mobile view */
+  }
+
+  /* Main Content Adjustments */
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .hero-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .contact-buttons {
+    justify-content: center;
+  }
 }
 
 /* Footer Styling */

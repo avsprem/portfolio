@@ -16,14 +16,20 @@
 </head>
 <body>
 
-  <!-- Left Navigation Sidebar -->
+<!-- Left Navigation Sidebar -->
   <aside class="sidebar">
-    <div class="profile-mini">
-      <img src="img/profile-square-3.png" alt="Akila Premathilaka">
-      <h2>Akila Premathilaka</h2>
+    <div class="sidebar-header">
+      <div class="profile-mini">
+        <img src="img/profile-square-3.png" alt="Akila Premathilaka">
+        <h2>Akila Premathilaka</h2>
+      </div>
+      <!-- Hamburger Icon for Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about" class="active"><i class="fa-solid fa-user"></i> About</a></li>
       <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
       <li><a href="#research"><i class="fa-solid fa-flask"></i> Publications</a></li>
